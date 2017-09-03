@@ -1,0 +1,23 @@
+{
+  "name": "walmart",
+  "description": "walmart code lab",
+  "main": "index.js",
+  "authors": [
+    "ravi shankar shanmugam"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/rshanmugam/walmart",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^1.0.6",
+    "angular": "^1.6.6",
+    "angular-bootstrap": "^2.5.0",
+    "lodash": "^4.17.4"
+  }
+}
