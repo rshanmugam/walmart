@@ -1,6 +1,6 @@
 (function () {
      'use strict';
-     angular.module('walmart', ['ui.router']);
+     angular.module('walmart', ['ui.router','ui.bootstrap']);
 
      angular.module('walmart').constant('config', {
           apiUrl: 'http://api.walmartlabs.com/v1/',
