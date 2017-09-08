@@ -41,7 +41,7 @@ app.get('/searchAPI/:query', function (req, res) {
 
 app.get('/productsLookupAPI/:ids', function (req, res) {
      let ids = req.params.ids;
-     fetch(`${config.apiUrl}/items/?apiKey=${config.apiKey}&ids=${ids}`)
+     fetch(`${config.apiUrl}/items?ids=${ids}&apiKey=${config.apiKey}`)
           .then(result => result.json())
           .then(result => {
                return res.json(result);
@@ -52,7 +52,7 @@ app.get('/productsLookupAPI/:ids', function (req, res) {
 
 app.get('/productLookupAPI/:id', function (req, res) {
      let id = req.params.id;
-     fetch(`${config.apiUrl}/items/${id}?apiKey=${config.apiKey}&ids=${id}`)
+     fetch(`${config.apiUrl}/items/${id}?apiKey=${config.apiKey}`)
           .then(result => result.json())
           .then(result => {
                return res.json(result);

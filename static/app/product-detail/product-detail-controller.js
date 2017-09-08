@@ -6,7 +6,7 @@
      function ProductDetailController($stateParams, ProductsService, $state, _, $q) {
           var self = this;
           self.itemId = $stateParams.itemId
-
+          self.count = 5;
           function init(){
                ProductsService.getItemById(self.itemId)
                .then((result) => {
@@ -17,14 +17,7 @@
                     
                     })
                })
-               // var promise = [];
-               // promise.push(ProductsService.getItemById(self.itemId));
-               // promise.push(ProductsService.recommendationLookupAPI(self.itemId))
-               // $q.all(promise)
-               // .then((results) => {
-               //      self.detail = results[0];
-               //      self.recommendations = result[1];
-               // })
+              
           }
 
           init();

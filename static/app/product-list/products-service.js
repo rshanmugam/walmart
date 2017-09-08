@@ -18,9 +18,12 @@
                })
           }
 
-          function productLookupAPI(ids) {
+          function productsLookupAPI(ids) {
                return $http.get(`productsLookupAPI/`+ids);
           }
+          function productLookupAPI(ids) {
+            return $http.get(`productLookupAPI/`+ids);
+       }
 
           function getItemById(itemId){
                let deferred = $q.defer();
@@ -46,6 +49,7 @@
                searchAPI: searchAPI,
                getSearchResult: getSearchResult,
                productLookupAPI: productLookupAPI,
+               productsLookupAPI: productsLookupAPI,
                recommendationLookupAPI: recommendationLookupAPI,
                getItemById: getItemById
           }

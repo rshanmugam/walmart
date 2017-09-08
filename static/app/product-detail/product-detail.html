@@ -1,15 +1,33 @@
 <div class="container" ng-controller="ProductDetailController as $ctrl">
-          <h3>{{$ctrl.detail.name}}<h3>
+          <h3>{{$ctrl.detail.name}}</h3>
           <div class="row">
-              <div class="col-md-3">
+              <div class="col-md-2">
+                    <div class="row" ng-repeat="image in $ctrl.detail.imageEntities">
+                            <img ng-src="{{::image.thumbnailImage}}">
+                    </div>
+              </div>
+              <div class="col-md-6">
                     <img ng-src="{{::$ctrl.detail.largeImage}}">
               </div>
+              <div class="col-md-4">
+                    <div>
+                        <div  style="background-color:white">
+                            <h1 style="color:blue"> ${{::$ctrl.detail.salePrice}}</h1>
+                            <h4>${{::$ctrl.detail.msrp}}</h4>
+                        </div>
+                    </div>
+              </div>
           </div>
-          <div class="row">
-               <div class="col-md-1" ng-repeat="recommendation in $ctrl.recommendations">
+          <div>
+          <div class="row" ng-if="$ctrl.recommendations.length && $ctrl.recommendations.length>0 ">
+               <div class="col-md-2" ng-repeat="recommendation in $ctrl.recommendations  track by $index" ng-if="$index<$ctrl.count">
                          <div><img ng-src="{{::recommendation.thumbnailImage}}"> </div>
-                         <p>{{::item.salePrice}}</p>
-                         <p>{{::item.name}}</p>
+                         <span>{{::recommendation.name}}</span>
                </div>
+               <div class="col-md-2" >
+                    <button class="btn-lg"><i class="glyphicon glyphicon-chevron-right" ng-click="$ctrl.count === 5 ? ($ctrl.count = 10) : $ctrl.count=5"></i></button>
+                </div>
           </div>
+         
+        </div>
      </div>
