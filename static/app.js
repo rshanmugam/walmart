@@ -1,12 +1,6 @@
 (function () {
      'use strict';
-     angular.module('walmart', ['ui.router','ui.bootstrap']);
-
-     angular.module('walmart').constant('config', {
-          apiUrl: 'http://api.walmartlabs.com/v1/',
-          apiKey: 'wb7ba789ha8b23a4wqk9aurs'
-
-     });
+     angular.module('walmart', ['ui.router','ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 
      angular.module('walmart').factory('_', ['$window',
           function ($window) {

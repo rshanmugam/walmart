@@ -1,0 +1,9 @@
+<div ng-controller="ProductsController as $ctrl">
+     <div class="row">
+          <div class="col-md-2" ng-repeat="item in $ctrl.result.items">
+               <div><img ng-src="{{::item.thumbnailImage}}" ng-click="$ctrl.detail(item.itemId)"> </div>
+               <p>{{::item.salePrice}}</p>
+               <p>{{::item.name}}</p>
+          </div>
+     </div>
+</div>

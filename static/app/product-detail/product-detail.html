@@ -1,0 +1,15 @@
+<div class="container" ng-controller="ProductDetailController as $ctrl">
+          <h3>{{$ctrl.detail.name}}<h3>
+          <div class="row">
+              <div class="col-md-3">
+                    <img ng-src="{{::$ctrl.detail.largeImage}}">
+              </div>
+          </div>
+          <div class="row">
+               <div class="col-md-1" ng-repeat="recommendation in $ctrl.recommendations">
+                         <div><img ng-src="{{::recommendation.thumbnailImage}}"> </div>
+                         <p>{{::item.salePrice}}</p>
+                         <p>{{::item.name}}</p>
+               </div>
+          </div>
+     </div>

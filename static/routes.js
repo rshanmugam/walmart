@@ -17,15 +17,15 @@ angular.module('walmart').config(function ($stateProvider, $urlRouterProvider, $
                url: '/',
                title: 'Search',
                parent: 'layout',
-               templateUrl: 'app/search-product/search-product.html'
+               templateUrl: 'app/product-list/product-list.html'
 
           },
           {    
                name: 'detail',
-               url: '/detail',
+               url: '/detail/:itemId',
                title: 'Detail',
                parent:'layout',
-               templateUrl: 'detail/detail.html'
+               templateUrl: 'app/product-detail/product-detail.html'
           },
      ];
  }
