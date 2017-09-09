@@ -6,6 +6,7 @@
 ```
      1. Node
      2. Npm package manager
+     3. bower web package manager
 ```
 
 # Setup
