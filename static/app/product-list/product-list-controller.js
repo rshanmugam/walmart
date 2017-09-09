@@ -1,11 +1,10 @@
 (function () {
      angular.module('walmart').controller('ProductsController', ProductsController);
 
-     function ProductsController($scope, ProductsService, $state, _) {
+     function ProductsController($scope, ProductsService, $state, _, $stateParams) {
           var self = this;
          
           $scope.$on('ON_SEARCH', (event, args) => {
-               $("#input-id").rating();
                ProductsService.searchAPI(args.query)
                     .then((result) => {
                          self.result = result;

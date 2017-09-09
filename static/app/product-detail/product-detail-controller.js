@@ -6,7 +6,6 @@
      function ProductDetailController($stateParams, ProductsService, $state, _, $q) {
           var self = this;
           self.itemId = $stateParams.itemId
-          self.count = 5;
           function init(){
                ProductsService.getItemById(self.itemId)
                .then((result) => {

@@ -2,7 +2,7 @@
           <h3>{{$ctrl.detail.name}}</h3>
           <div class="row">
               <div class="col-md-2">
-                    <div class="row" ng-repeat="image in $ctrl.detail.imageEntities">
+                    <div class="row" ng-repeat="image in $ctrl.detail.imageEntities track by $index" ng-if="$index<4">
                             <img ng-src="{{::image.thumbnailImage}}">
                     </div>
               </div>
@@ -11,21 +11,26 @@
               </div>
               <div class="col-md-4">
                     <div>
-                        <div  style="background-color:white">
-                            <h1 style="color:blue"> ${{::$ctrl.detail.salePrice}}</h1>
-                            <h4>${{::$ctrl.detail.msrp}}</h4>
+                        <div >
+                            <h1 style="color:#0074b8"> <sup>$</sup>{{::$ctrl.detail.salePrice}}</h1>  
+                            <h4>List price ${{::$ctrl.detail.msrp}}</h4>
                         </div>
                     </div>
               </div>
           </div>
           <div>
           <div class="row" ng-if="$ctrl.recommendations.length && $ctrl.recommendations.length>0 ">
-               <div class="col-md-2" ng-repeat="recommendation in $ctrl.recommendations  track by $index" ng-if="$index<$ctrl.count">
+                <h3>Customers also considered</h3>
+                <br>
+                <div class="col-md-1" >
+                        <button class="btn-lg"><i class="glyphicon glyphicon-chevron-left" ng-click="$ctrl.count === 5 ? ($ctrl.count = 10) : $ctrl.count=5"></i></button>
+                </div>                        
+               <div class="col-md-2" ng-repeat="recommendation in $ctrl.recommendations  track by $index" ng-if="$index<5">
                          <div><img ng-src="{{::recommendation.thumbnailImage}}"> </div>
                          <span>{{::recommendation.name}}</span>
                </div>
-               <div class="col-md-2" >
-                    <button class="btn-lg"><i class="glyphicon glyphicon-chevron-right" ng-click="$ctrl.count === 5 ? ($ctrl.count = 10) : $ctrl.count=5"></i></button>
+               <div class="col-md-1" >
+                    <button class="btn-lg"><i class="glyphicon glyphicon-chevron-right"  ng-click="$ctrl.count === 5 ? ($ctrl.count = 10) : $ctrl.count=5"></i></button>
                 </div>
           </div>
          
