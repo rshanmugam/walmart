@@ -1,5 +1,6 @@
 <div class="container" ng-controller="ProductDetailController as $ctrl">
-          <h3>{{$ctrl.detail.name}}</h3>
+            {{::$ctrl.detail.categoryPath}}
+          <h3>{{::$ctrl.detail.name}}</h3>
           <div class="row">
               <div class="col-md-2">
                     <div class="row" ng-repeat="image in $ctrl.detail.imageEntities track by $index" ng-if="$index<4">
@@ -11,9 +12,11 @@
               </div>
               <div class="col-md-4">
                     <div>
-                        <div >
+                        <div class="row">
                             <h1 style="color:#0074b8"> <sup>$</sup>{{::$ctrl.detail.salePrice}}</h1>  
                             <h4>List price ${{::$ctrl.detail.msrp}}</h4>
+                        </div>
+                        <div class="row" ng-bind-html="$ctrl.detail.longDescription">
                         </div>
                     </div>
               </div>
