@@ -1,12 +1,13 @@
 <div ng-controller="ProductsController as $ctrl">
-     <div class="row" style="padding:50px" >
-          <div class="col-md-3" ng-repeat="item in $ctrl.result.items">
-               <div>
-                    <a href="javascript:void(0)"  ng-click="$ctrl.detail(item.itemId)" > <img ng-src="{{::item.thumbnailImage}}"> </a>
-               <h3 style="color:#0074b8">{{::item.salePrice}}<sup>$</sup></h3>
-               <h5 style="color:#0074b8" ng-if="::item.msrp">List price {{::item.msrp}}<sup>$</sup></h5>
-               <div style="max-height: 100px"><a href="javascript:void(0)" ng-click="$ctrl.detail(item.itemId)">{{item.productDetail.brandName}} - {{::item.name}}</a></div>
-               <p>ratings : {{::item.customerRating}}
-          </div>
-     </div>
+          <div class="row"  style="padding:50px" >  
+                    <div class="col-2 col-sm-5 col-md-3 col-lg-2 panel "  ng-repeat="item in $ctrl.result.items">
+                      <div class="panel-heading" >
+                         <a href="javascript:void(0)"  ng-click="$ctrl.detail(item.itemId)" > <img ng-src="{{::item.thumbnailImage}}"> </a>
+                         <h3 style="color:#0074b8">{{::item.salePrice}}<sup>$</sup></h3>
+          
+                        <h6  style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{::item.name}}</h6>
+                      </div><!-- /.panel-heading -->
+                    </div><!--/span-->
+                  </div>
+
 </div>
