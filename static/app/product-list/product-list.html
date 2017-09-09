@@ -1,11 +1,12 @@
 <div ng-controller="ProductsController as $ctrl">
-     <div class="row">
+     <div class="row" style="padding:50px" >
           <div class="col-md-3" ng-repeat="item in $ctrl.result.items">
                <div>
                     <a href="javascript:void(0)"  ng-click="$ctrl.detail(item.itemId)" > <img ng-src="{{::item.thumbnailImage}}"> </a>
                <h3 style="color:#0074b8">{{::item.salePrice}}<sup>$</sup></h3>
                <h5 style="color:#0074b8" ng-if="::item.msrp">List price {{::item.msrp}}<sup>$</sup></h5>
-               <p><a href="javascript:void(0)" ng-click="$ctrl.detail(item.itemId)">{{item.productDetail.brandName}} - {{::item.name}}</a></p>
+               <div style="max-height: 100px"><a href="javascript:void(0)" ng-click="$ctrl.detail(item.itemId)">{{item.productDetail.brandName}} - {{::item.name}}</a></div>
+               <p>ratings : {{::item.customerRating}}
           </div>
      </div>
 </div>

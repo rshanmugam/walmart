@@ -19,18 +19,18 @@
               </div>
           </div>
           <div>
-          <div class="row" ng-if="$ctrl.recommendations.length && $ctrl.recommendations.length>0 ">
+          <div class="row" ng-if="$ctrl.recommendations.length && $ctrl.recommendations.length>0 " style="max-height: 150px;">
                 <h3>Customers also considered</h3>
-                <br>
+                <br> 
                 <div class="col-md-1" >
-                        <button class="btn-lg"><i class="glyphicon glyphicon-chevron-left" ng-click="$ctrl.count === 5 ? ($ctrl.count = 10) : $ctrl.count=5"></i></button>
+                        <button class="btn-lg"   ng-click="$ctrl.previousSet()"><i class="glyphicon glyphicon-chevron-left"></i></button>
                 </div>                        
-               <div class="col-md-2" ng-repeat="recommendation in $ctrl.recommendations  track by $index" ng-if="$index<5">
+               <div class="col-md-2" ng-repeat="recommendation in $ctrl.recommendations  | startFrom: $ctrl.currentList * $ctrl.listSize |  limitTo:$ctrl.listSize" >
                          <div><img ng-src="{{::recommendation.thumbnailImage}}"> </div>
                          <span>{{::recommendation.name}}</span>
                </div>
                <div class="col-md-1" >
-                    <button class="btn-lg"><i class="glyphicon glyphicon-chevron-right"  ng-click="$ctrl.count === 5 ? ($ctrl.count = 10) : $ctrl.count=5"></i></button>
+                    <button class="btn-lg"    ng-click="$ctrl.nextSet()"><i class="glyphicon glyphicon-chevron-right"></i></button>
                 </div>
           </div>
          
